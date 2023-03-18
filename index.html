@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="pokedex__container">
+            <div class="pokedex__left">
+                <div class="lights">
+                    <div class="lights__container">
+                        <div class="main__light">
+                            <div class="main__light--center"></div>
+                        </div>
+                        <div class="other__lights">
+                            <div class="secondary__light red"></div>
+                            <div class="secondary__light yellow"></div>
+                            <div class="secondary__light green"></div>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h2 class="letra-con-borde">Pokédex</h2>
+                    </div>
+                </div>
+                <div class="screen">
+                    <div class="screen__lights">
+                        <div class="secondary__light red"></div>
+                        <div class="secondary__light red"></div>
+                    </div>
+                    <div class="screen__display" id="firstDisplay">
+
+                    </div>
+                    <div class="screen__dec">
+                        <div class="screen__mainlight"></div>
+                        <div class="screen__speaker"><img src="./assets/imgs/menu.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="buttons">
+                        <div class="first__buttons">
+                            <button id="onOff" class="power__btn" onclick="powerOn()">
+                                <img src="./assets/imgs/power-button.png" alt="On/Off">
+                            </button>
+                            <div class="other__buttons">
+                                <div class="button__dec green"></div>
+                                <div class="button__dec yellow"></div>
+                            </div>
+                        </div>
+                        <div class="second__buttons">
+                            <input type="text" readonly class="info__display" id="nameDisplay">
+                        </div>
+                    </div>
+                    <div class="crosspad">
+                        <img src="./assets/imgs/gamepad-cross.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="pokedex__right short">
+                <div class="second__screen" id="secondDisplay">
+                    
+                </div>
+                <div class="features">
+                    <div class="right__decoration">
+                        <div class="right__lights">
+                            <div class="secondary__light yellow"></div>
+                            <div class="secondary__light green"></div>
+                        </div>
+                        <div class="other__buttons">
+                            <div class="button__dec yellow"></div>
+                            <div class="button__dec green"></div>
+                        </div>
+                    </div>
+                    <div class="search__info">
+                        <label for="pokeSearch">Pokémon</label>
+                        <input type="text" id="pokeSearch" class="info__display" readonly>
+                    </div>
+                    <div class="search__button">
+                        <button onclick="fetchPokemon()">Buscar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>
