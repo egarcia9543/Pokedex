@@ -1,6 +1,7 @@
 const pokemonImgDisplay = document.getElementById("firstDisplay");
 const pokemonNameDisplay = document.getElementById("nameDisplay");
 const pokemonInfoDisplay = document.getElementById("secondDisplay");
+const powerButton = document.getElementById("onOff");
 
 function fetchPokemon() {
     let id = document.getElementById("pokeSearch").value;
@@ -99,16 +100,22 @@ function createPokemon(pokemon) {
 
 
 function powerOn() {
-    document.getElementById("onOff").style.backgroundColor = "#00d6fe";
-    let unlockSearch = document.getElementById("pokeSearch");
-    unlockSearch.removeAttribute("readonly");
+    powerButton.classList.toggle("button__on");
+    pokemonImgDisplay.classList.toggle("screen__on");
+    pokemonInfoDisplay.classList.toggle("screen__on");
 
-    document.getElementById("firstDisplay").style.backgroundColor = "#97cb97"
-    document.getElementById("secondDisplay").style.backgroundColor = "#97cb97"
+    let pokedexOn = pokemonImgDisplay.classList.contains("screen__on");
+    if (pokedexOn) {
+        document.getElementById("pokeSearch").removeAttribute("readonly");
+
+    } else if (!pokedexOn) {
+        document.getElementById("pokeSearch").setAttribute("readonly", "readonly");
+        document.getElementById("pokeSearch").value = "";
+        pokemonImgDisplay.removeChild(pokemonCard);
+        pokemonCard = null
+        pokemonInfoDisplay.removeChild(statsCard);
+        statsCard = null
+        pokemonNameDisplay.value = "";
+    }
 }
 
-// for (let i = 0; i < pokemon.types.length; i++) {
-        //     const stats = document.createElement("p");
-        //     stats.textContent = pokemon.types[i].type.name
-        //     pokemonInfoDisplay.appendChild(stats)
-        // }
